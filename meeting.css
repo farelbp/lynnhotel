@@ -1,0 +1,181 @@
+/* Reset Dasar */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #fcfbfb;
+  }
+  
+  /* Header */
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: transparent;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    border-bottom: 1px solid white;
+  }
+  
+  .back-button {
+    display: flex;
+    align-items: center;
+    margin-left: -25px; /* Jarak dari kiri */
+  }
+  
+  .back-logo {
+    width: 30px; /* Ukuran logo kembali */
+    height: auto;
+    cursor: pointer;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .logo img {
+    height: 40px;
+    transform: scale(2);
+    transform-origin: center;
+    margin-left: 15px;
+  }
+  
+  nav {
+    flex: 1;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 7px;
+    transition: all 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  
+  .contact-button {
+    background-color: transparent;
+    padding: 8px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 30px;
+  }
+  
+  /* Hero Section */
+  .hero-offers {
+    height: 100vh; /* Membuat hero mengisi seluruh layar */
+    width: 100%; /* Lebar penuh */
+    display: flex;
+    align-items: flex-start; /* Mengatur teks lebih ke atas */
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px; /* Menambahkan padding agar tidak terlalu dekat ke tepi */
+    background: url('slide2.jpg') no-repeat center center; /* Ganti dengan gambar yang sesuai */
+    background-size: cover; /* Gambar akan mengisi seluruh area */
+    background-position: center;
+    position: relative;
+  }
+  
+  .hero-offers::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Efek gelap untuk meningkatkan visibilitas teks */
+  }
+  
+  .hero-offers h1 {
+    position: relative;
+    font-family: 'Montserrat', sans-serif; /* Menggunakan font yang sama dengan hero */
+    font-weight: 100; /* Berat font seperti yang diinginkan */
+    font-size: 3rem; /* Ukuran font yang sesuai */
+    line-height: 1.0; /* Jarak antar baris teks */
+    z-index: 1; /* Menjaga teks tetap di atas */
+    margin-top: 30vh; /* Mengatur posisi teks lebih ke atas */
+  }
+  
+  /* Event Section */
+  .events-section {
+    display: flex;
+    justify-content: space-between; /* Menyebarkan event card ke kiri dan kanan */
+    align-items: center;
+    padding: 50px 30px;
+    gap: 20px; /* Menambahkan jarak antar card */
+    position: relative; /* Agar garis hitam bisa diposisikan secara absolute di dalamnya */
+  }
+  
+  /* Garis hitam di tengah */
+  .events-section::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%; /* Menempatkan di tengah */
+    top: 0;
+    bottom: 0;
+    width: 2px; /* Lebar garis */
+    background-color: black;
+    transform: translateX(-50%); /* Menyelaraskan garis ke tengah */
+  }
+  
+  .event-card {
+    display: flex;
+    flex-direction: column; /* Membuat gambar di atas dan teks di bawah */
+    align-items: center;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 45%; /* Membatasi lebar card untuk dua card dalam satu baris */
+  }
+  
+  .event-image img {
+    width: 100%; /* Gambar mengisi lebar card */
+    height: auto;
+    max-width: 300px; /* Ukuran gambar */
+    aspect-ratio: 9 / 16; /* Menetapkan rasio gambar 9:16 */
+    object-fit: cover; /* Gambar tetap proporsional */
+    transition: transform 0.3s ease;
+  }
+  
+  .event-image img:hover {
+    transform: scale(1.05); /* Memperbesar gambar sedikit saat hover */
+  }
+  
+  .event-content {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .event-content h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .event-content p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Animasi untuk gambar */
+  .event-image img:active {
+    transform: scale(0.95); /* Memberikan efek klik pada gambar */
+  }
+  

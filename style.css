@@ -1,0 +1,340 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #fcfbfb;
+  }
+  
+/* Memastikan header tetap di atas layar saat scroll */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: transparent;
+    color: white;
+    position: fixed; /* Tetap di atas saat scroll */
+    top: 0; /* Posisi di atas */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Pastikan header di atas elemen lain */
+    border-bottom: 1px solid white;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: -20px; /* Menggeser sedikit ke kiri */
+  }
+  
+  .logo img {
+    height: 40px; /* Tetap mempertahankan tinggi logo asli */
+    transform: scale(2); /* Memperbesar logo sebesar 2 kali */
+    transform-origin: center; /* Memastikan logo tetap terpusat */
+    margin-left: 15px; 
+  }
+  
+  
+  nav {
+    flex: 1;
+    text-align: center;
+  }
+  
+  nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .contact-button {
+    background-color: transparent;
+    padding: 8px 15px;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 30px; /* Jarak ke kiri lebih jauh */
+    margin-top: 5px; /* Menyesuaikan dengan posisi */
+  }
+  
+  
+  
+  .hero {
+    height: 100vh; /* Membuat hero mengisi seluruh layar */
+    width: 100%; /* Lebar penuh */
+    display: flex;
+    align-items: flex-start; /* Mengatur teks lebih ke atas */
+    justify-content: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px; /* Menambahkan padding agar tidak terlalu dekat ke tepi */
+    background: url('your-image.jpg') no-repeat center center; /* Ganti dengan gambar yang sesuai */
+    background-size: cover; /* Gambar akan mengisi seluruh area */
+    background-position: center;
+    position: relative;
+  }
+  
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Efek gelap untuk meningkatkan visibilitas teks */
+  }
+  
+  .hero h1 {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 3rem;
+    line-height: 1.0;
+    z-index: 1; /* Menjaga teks tetap di atas */
+    margin-top: 30vh; /* Memindahkan teks sedikit ke atas */
+  }
+  
+  
+  .side-menu {
+    width: 250px;
+    height: 100%;
+    background: #e7a411; /* Sedikit transparan hitam */
+    position: fixed;
+    top: 0;
+    left: -250px;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1001;
+  }
+  
+  .side-menu a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    z-index: 1000;
+  }
+  
+  .overlay.show {
+    display: block;
+  }  
+
+  .side-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Kotak transparan putih */
+    border-radius: 5px; /* Sudut sedikit melengkung */
+    color: white; /* Menjaga warna teks tetap putih */
+  }
+  
+  @media screen and (max-width: 768px) {
+    nav {
+      display: none;
+    }
+  }
+
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 7px; /* Padding lebih kecil agar jarak antar teks lebih rapat */
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+    margin: 0 3px; /* Margin lebih kecil untuk jarak antar teks lebih mepet */
+  }
+  
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Kotak transparan putih */
+    border-radius: 5px; /* Sudut sedikit melengkung */
+    color: white; /* Menjaga warna teks tetap putih */
+  }
+  
+  /* Mengubah font pada teks di hero */
+.hero h1 {
+    font-family: 'Montserrat', sans-serif; /* Mengganti dengan font yang lebih ramping */
+    font-weight: 200; /* Mengatur berat font agar lebih ramping */
+    font-size: 3rem; /* Sesuaikan ukuran font */
+    line-height: 1.0; /* Memberikan jarak antar baris */
+  }
+
+ /* Style untuk About Us */
+ .about-us {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 30px;
+    background-color: #ffffff;
+    margin-top: 50px; /* Menambahkan jarak antara hero dan about us */
+    opacity: 0.9; /* Sesuaikan agar tidak terlalu transparan */
+    transform: translateY(20px); /* Kurangi jarak vertikal awal */
+    transition: opacity 1s, transform 1s; /* Animasi dengan transisi halus */
+  }
+  
+  .about-us.show {
+    opacity: 1;
+    transform: translateY(0); /* Gerakkan ke posisi normal saat scroll */
+  }
+  
+  .about-image {
+    flex: 1; /* Membuat gambar mengisi satu kolom */
+    display: flex;
+    justify-content: flex-start; /* Memastikan gambar ada di kiri */
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: auto;
+    max-width: 600px; /* Membuat gambar lebih besar */
+    border-radius: 10px;
+    transition: transform 0.3s ease; /* Animasi transformasi gambar */
+  }
+  
+  /* Efek hover untuk gambar */
+  .about-image img:hover {
+    transform: scale(1.05); /* Memperbesar gambar sedikit saat hover */
+  }
+  
+  .about-text {
+    flex: 1; /* Membuat teks mengisi satu kolom */
+    max-width: 600px; /* Lebar teks maksimal */
+    font-family: 'Montserrat', sans-serif;
+    padding-left: 30px; /* Memberikan jarak pada teks agar tidak terlalu dekat */
+  }
+  
+  .about-text h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Animasi scroll */
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+/* Fasilitas Section */
+.fasilitas {
+    padding: 50px 30px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .fasilitas-text {
+    text-align: left;
+    margin-bottom: 30px;
+    width: 80%;
+  }
+  
+  .fasilitas-text h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .fasilitas-text p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  /* Slider Section */
+  .fasilitas-slider {
+    width: 100%;
+    overflow: hidden; /* Menyembunyikan gambar yang keluar dari kontainer */
+  }
+  
+  .slider {
+    display: flex;
+    animation: slide 30s linear infinite; /* Durasi animasi diperpanjang untuk membuatnya lebih halus */
+  }
+  
+  .slider img {
+    width: 300px; /* Ukuran gambar */
+    height: 200px;
+    object-fit: cover;
+    margin-right: 20px; /* Jarak antar gambar */
+    border-radius: 10px;
+  }
+  
+  /* Animasi untuk gambar bergerak ke samping tanpa putus */
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%); /* Gambar pertama bergerak keluar dan menuju akhir */
+    }
+  }
+  
+/* Footer Section */
+.footer {
+    background-color: #e7a411; /* Kuning */
+    padding: 20px 0;
+    text-align: center;
+    border-top: 5px solid white; /* Garis putih di atas footer */
+  }
+  
+  .social-icons {
+    margin-bottom: 20px;
+  }
+  
+/* Efek Hover dan Active untuk Ikon Sosial */
+.social-icon {
+    margin: 0 15px;
+    display: inline-block;
+    transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease; /* Tambahkan transisi untuk box-shadow */
+  }
+  
+  .social-icon img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease; /* Transisi untuk transformasi dan filter */
+  }
+  
+  .social-icon:hover img {
+    transform: scale(1.1); /* Perbesar ikon saat hover */
+    background-color: rgba(255, 255, 255, 0.2); /* Kotak transparan putih */
+    border-radius: 5px; /* Sudut sedikit melengkung */
+  }
+  
+  .copyright p {
+    font-size: 14px;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  /* Responsif untuk footer jika layar lebih kecil */
+  @media (max-width: 768px) {
+    .social-icon img {
+      width: 30px;
+      height: 30px;
+    }
+  }
+    

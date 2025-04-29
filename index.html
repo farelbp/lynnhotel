@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lynn Hotel Mojokerto</title>
+      
+        <link rel="icon" href="logo.png" type="image/png">
+        <link rel="icon" href="logo-32x32.png" sizes="32x32" type="image/png">
+        <link rel="icon" href="logo-16x16.png" sizes="16x16" type="image/png">
+        
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      </head>
+      
+<body>
+
+<header>
+  <div class="menu-icon" onclick="openMenu()">☰</div>
+  <div class="logo">
+    <img src="logo.png" alt="Hotel Logo">
+  </div>
+  
+  <nav>
+    <a href="hotels.html">HOTELS</a>
+    <a href="offers.html">OFFERS</a>
+    <a href="meeting.html">MEETING</a>
+    <a href="restaurant.html">RESTAURANT</a>
+    <a href="fasilitas.html">FACILITY</a>
+  </nav>
+  <a href="https://wa.me/6281234567890" target="_blank" class="contact-button">CONTACT US</a>
+</header>
+
+<div class="hero">
+  <h1>FEEL AT HOME <br> WHILE IN MOJOKERTO</h1>
+</div>
+
+<div class="side-menu" id="sideMenu">
+    <a href="hotels.html">HOTELS</a>
+    <a href="offers.html">OFFERS</a>
+    <a href="meeting.html">MEETING</a>
+    <a href="dinner.html">RESTAURANT</a>
+    <a href="fasilitas.html">FACILITY</a>
+  </div>
+  
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<div class="about-us">
+    <div class="about-image">
+      <img src="slide4.jpg" alt="About Us Image"> <!-- Ganti dengan gambar yang sesuai -->
+    </div>
+    <div class="about-text">
+      <h2>ABOUT US</h2>
+      <p>Conveniently located in the downtown area of Mojokerto city, LYNN Hotel Mojokerto aims to be the ideal "home away from home" for travelers who seeks for the essentials, ease and ultimate comfort in a travel while exploring the city's many destinations.
+        Our guest rooms and facilities are modernly designed with inspiration from Mojokerto culture, creating an unique Mojokerto experience and soothing ambience for a restful stay. Buffet breakfast and a la carte menu are served by Astabrata restaurant, offering delicious range of Indonesian, Asian and Western dishes. Business guests and travelers can also benefit from our meeting facilities featured with modern audiovisual equipment.</p>
+    </div>
+  </div>
+  
+<!-- Fasilitas Section -->
+<section class="fasilitas">
+    <div class="fasilitas-text">
+      <h2>FASILITAS KAMI</h2>
+      <p>Di hotel kami, kami menawarkan berbagai fasilitas terbaik untuk kenyamanan Anda. Nikmati layanan premium yang siap melayani setiap kebutuhan Anda.</p>
+    </div>
+    <div class="fasilitas-slider">
+      <div class="slider">
+        <img src="slide1.jpg" alt="Fasilitas 1">
+        <img src="slide2.jpg" alt="Fasilitas 2">
+        <img src="slide3.jpg" alt="Fasilitas 3">
+        <img src="slide4.jpg" alt="Fasilitas 4">
+        <img src="slide5.jpg" alt="Fasilitas 5">
+        <img src="slide6.jpg" alt="Fasilitas 6">
+        <!-- Duplikat gambar pertama untuk membuat loop -->
+        <img src="slide1.jpg" alt="Fasilitas 1">
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer Section -->
+<footer class="footer">
+    <div class="social-icons">
+      <a href="https://www.instagram.com/lynnmojokerto?igsh=Zm5qaHJiOWQzdjUx" target="_blank" class="social-icon">
+        <img src="ig.png" alt="Instagram">
+      </a>
+      <a href="https://www.tiktok.com/@lynnmojokerto?_t=ZS-8vtxbkOznRY&_r=1" target="_blank" class="social-icon">
+        <img src="tt.png" alt="TikTok">
+      </a>
+      <a href="https://www.facebook.com" target="_blank" class="social-icon">
+        <img src="fb.png" alt="Facebook">
+      </a>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 Lynn Hotel Mojokerto.</p>
+    </div>
+  </footer>
+  
+  
+  </div>  
+
+<script>
+let hero = document.querySelector('.hero');
+let images = [
+  'slide1.jpg',
+  'slide2.jpg',
+  'slide3.jpg'
+];
+let i = 0;
+
+// Menampilkan gambar pertama segera setelah halaman dimuat
+hero.style.backgroundImage = `url('${images[i]}')`;
+
+// Mengubah gambar setiap 4 detik
+setInterval(() => {
+  i = (i + 1) % images.length;
+  hero.style.backgroundImage = `url('${images[i]}')`;
+}, 4000); // Mengubah gambar setiap 4 detik
+
+  </script>
+
+<script>
+    function openMenu() {
+      document.getElementById('sideMenu').style.left = '0';
+      document.getElementById('overlay').classList.add('show');
+    }
+    
+    function closeMenu() {
+      document.getElementById('sideMenu').style.left = '-250px';
+      document.getElementById('overlay').classList.remove('show');
+    }
+    </script>
+    
+  
+
+</body>
+</html>
